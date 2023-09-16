@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <html>
+    <head>
+      <link rel="stylesheet" type="text/css" href="style.css" />
+    </head>
+
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+      }
+
+      h1 {
+        text-align: center;
+      }
+
+      p {
+        text-align: center;
+      }
+
+      form {
+        width: 300px;
+        margin: 0 auto;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 10px;
+      }
+
+      input[type="text"],
+      input[type="password"],
+      input[type="email"],
+      input[type="tel"] {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 20px;
+      }
+
+      button {
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        cursor: pointer;
+      }
+
+      a {
+        color: #007bff;
+      }
+    </style>
+
+    <body>
+      <h1>Tela de Login</h1>
+      <form id="loginForm">
+        <label for="username">Usuário:</label>
+        <input type="text" id="username" name="username" required /><br /><br />
+
+        <label for="password">Senha:</label>
+        <input
+          type="password"
+          id="password"
+          name="password"
+          required
+        /><br /><br />
+
+        <button type="submit">Entrar</button>
+      </form>
+      <p><a href="/cadastro">Criar Login</a></p>
+
+      <script src="script.js"></script>
+    </body>
+  </html>
+</html>
