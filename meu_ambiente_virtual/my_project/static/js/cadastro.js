@@ -1,13 +1,19 @@
-document.getElementById('cadastro-form').addEventListener('submit', function (e) {
-    e.preventDefault();
-    const senha = document.getElementById('senha').value;
-    const confirmSenha = document.getElementById('confirm-senha').value;
+function validarSenha() {
+            var password = document.getElementById("senha").value;
 
-    if (senha !== confirmSenha) {
-        alert('As senhas não coincidem. Tente novamente.');
-        return;
-    }
+            // verificar o tamanho minimo da senha
+            if (password.length < 8) {
+                alert("A senha deve ter pelo menos 8 caracteres");
+                return false;
+            }
 
-    // Aqui você pode enviar os dados do formulário para o servidor (Python).
-});
-
+            // verificar senha 
+            var uppercaseRegex = /[A-Z]/; //Regex é como uma máscara
+            var numberRegex = /[0-9]/;
+            //uma letra maiúscula e um número
+            if (!uppercaseRegex.test(password) || !numberRegex.test(password)) {
+                alert("A senha deve conter pelo menos uma letra e um numero");
+                return false; // não passou na validação, retorna false
+            }
+            return true; // o formulário será enviado para a rota /autenticar
+        }
